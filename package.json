@@ -1,0 +1,42 @@
+{
+  "name": "chinos-tasca-chingaro",
+  "version": "1.0.0",
+  "description": "CHINO'S TASCA CHINGARO — Cocina & Cantina. Sitio demo + API de reservas. Propietario: Guzman.",
+  "main": "server.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run watch:css\"",
+    "server": "nodemon server.js",
+    "start": "node server.js",
+    "build:css": "tailwindcss -i ./src/input.css -o ./css/tailwind.css --minify",
+    "watch:css": "tailwindcss -i ./src/input.css -o ./css/tailwind.css --watch",
+    "lint": "eslint . --ext .js",
+    "format": "prettier --write \"**/*.{js,html,css,json,md}\"",
+    "format:check": "prettier --check \"**/*.{js,html,css,json,md}\"",
+    "test": "jest --coverage",
+    "test:watch": "jest --watch",
+    "prepare": "husky install"
+  },
+  "keywords": ["restaurant", "cantina", "mexican", "demo", "guzman"],
+  "author": "Familia Guzman",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "helmet": "^7.1.0",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.13",
+    "postcss": "^8.4.47",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^8.57.0",
+    "prettier": "^3.3.3",
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0",
+    "nodemon": "^3.1.7",
+    "concurrently": "^9.0.1",
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.10"
+  }
+}
