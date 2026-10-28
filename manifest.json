@@ -1,0 +1,13 @@
+{
+  "name": "CHINO'S TASCA CHINGARO",
+  "short_name": "CHINO'S",
+  "description": "Cocina & Cantina — Familia Guzman",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#e9c46a",
+  "icons": [
+    { "src": "assets/logo-option3.jpg", "sizes": "192x192", "type": "image/jpeg" },
+    { "src": "assets/logo-option3.jpg", "sizes": "512x512", "type": "image/jpeg" }
+  ]
+}
