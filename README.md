@@ -1,5 +1,8 @@
 # 🌮 CHINO'S TASCA CHINGARO — Cocina & Cantina
 
+> 🚀 **Live Preview:** https://iksterbo-design.github.io/chinos-tasca-chingaro/
+> _Mobile-first brand site with parallax hero, ambient steam, shimmer, floating food icons, looping footage tiles._
+
 ![CI](https://github.com/iksterbo-design/chinos-tasca-chingaro/actions/workflows/ci.yml/badge.svg)
 ![Pages](https://github.com/iksterbo-design/chinos-tasca-chingaro/actions/workflows/pages.yml/badge.svg)
 ![License](https://img.shields.io/badge/license-MIT-gold)

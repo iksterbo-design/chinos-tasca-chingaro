@@ -1,6 +1,23 @@
 /* eslint-env browser */
 // CHINO'S TASCA CHINGARO — main.js
 (function () {
+  // Parallax on scroll
+  const pLayers = document.querySelectorAll('.parallax-bg');
+  let pTick = false;
+  function onParallax() {
+    if (!pTick) {
+      requestAnimationFrame(() => {
+        const y = window.scrollY;
+        pLayers.forEach((l) => {
+          l.style.transform = 'translateY(' + y * 0.3 + 'px)';
+        });
+        pTick = false;
+      });
+      pTick = true;
+    }
+  }
+  window.addEventListener('scroll', onParallax, { passive: true });
+
   // Reveal on scroll
   const io = new IntersectionObserver(
     (entries) => {

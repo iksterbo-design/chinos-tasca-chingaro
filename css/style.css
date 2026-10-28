@@ -531,3 +531,43 @@ footer .wrap {
     gap: 1.5rem;
   }
 }
+
+/* === Parallax & Ambient Motion (master prompt standards) === */
+.parallax-wrap { position: relative; overflow: hidden; will-change: transform; }
+.parallax-bg { position: absolute; inset: -8% -4% -8% -4%; background-size: cover; background-position: center; will-change: transform; transition: transform .1s linear; z-index: 0; }
+.parallax-mid { position: absolute; inset: 0; pointer-events: none; z-index: 1; }
+.parallax-fg { position: relative; z-index: 2; }
+
+.steam { position: absolute; bottom: 0; width: 8px; height: 70px; background: linear-gradient(to top, rgba(245,240,230,.4), transparent); border-radius: 50%; filter: blur(5px); animation: steamRise 4.5s ease-in infinite; opacity: 0; }
+.steam:nth-child(2){ left: 25%; animation-delay: 1.3s; height: 90px; }
+.steam:nth-child(3){ left: 55%; animation-delay: 2.6s; height: 60px; }
+.steam:nth-child(4){ left: 78%; animation-delay: .7s; height: 80px; }
+@keyframes steamRise { 0%{ transform: translateY(0) scaleX(1); opacity:0; } 20%{ opacity:.7; } 100%{ transform: translateY(-150px) scaleX(1.7); opacity:0; } }
+
+.shimmer { position: absolute; inset: 0; pointer-events: none; background: linear-gradient(120deg, transparent 40%, rgba(234,196,106,.16) 50%, transparent 60%); background-size: 200% 100%; animation: shimmerSweep 7s ease-in-out infinite; }
+@keyframes shimmerSweep { 0%{ background-position: 200% 0; } 100%{ background-position: -200% 0; } }
+
+.slowpan { animation: slowpan 26s ease-in-out infinite alternate; }
+@keyframes slowpan { 0%{ transform: scale(1.06) translate(0,0); } 100%{ transform: scale(1.14) translate(-3%,-2%); } }
+
+.food-icon { display: inline-block; animation: floaty 5.5s ease-in-out infinite; }
+.food-icon:nth-child(2n){ animation-delay: .9s; }
+.food-icon:nth-child(3n){ animation-delay: 1.8s; }
+@keyframes floaty { 0%,100%{ transform: translateY(0) rotate(0deg); } 50%{ transform: translateY(-16px) rotate(7deg); } }
+
+.logo-glow { text-shadow: 0 0 20px rgba(234,196,106,.6), 0 0 44px rgba(230,57,70,.3); animation: glowPulse 3.8s ease-in-out infinite; }
+@keyframes glowPulse { 0%,100%{ text-shadow: 0 0 20px rgba(234,196,106,.6), 0 0 44px rgba(230,57,70,.3); } 50%{ text-shadow: 0 0 36px rgba(234,196,106,.9), 0 0 78px rgba(230,57,70,.5); } }
+
+.anim-underline { position: relative; display: inline-block; }
+.anim-underline::after { content: ''; position: absolute; left: 0; bottom: -6px; width: 0; height: 2px; background: var(--gold); animation: underlineGrow 2.6s ease-out forwards; }
+@keyframes underlineGrow { to { width: 100%; } }
+
+.vidloop { position: relative; overflow: hidden; background: linear-gradient(135deg, #2a1410, #0a0a0a, #1f1410); background-size: 200% 200%; animation: vidbg 9s ease-in-out infinite; border: 1px solid rgba(234,196,106,.15); }
+@keyframes vidbg { 0%{ background-position: 0% 50%; } 50%{ background-position: 100% 50%; } 100%{ background-position: 0% 50%; } }
+
+.menu-card { transition: transform .35s ease, box-shadow .35s ease; }
+.menu-card:hover { transform: translateY(-8px) scale(1.02); box-shadow: 0 22px 44px rgba(234,196,106,.22); }
+
+@media (prefers-reduced-motion: reduce) {
+  .parallax-bg, .steam, .shimmer, .slowpan, .food-icon, .logo-glow, .anim-underline::after, .vidloop { animation: none !important; transition: none !important; }
+}
