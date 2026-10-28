@@ -1,98 +1,263 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>CHINO'S TASCA CHINGARO — Demo Admin | Guzman</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="css/style.css"/>
-<style>
-  .admin{display:grid;grid-template-columns:240px 1fr;min-height:100vh}
-  .sidebar{background:var(--charcoal);border-right:1px solid rgba(234,196,106,.15);padding:1.5rem}
-  .sidebar .logo{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;margin-bottom:2rem}
-  .sidebar a{display:block;padding:.7rem 1rem;border-radius:.6rem;color:#d6d3d1;margin-bottom:.3rem;font-size:.9rem}
-  .sidebar a.active,.sidebar a:hover{background:rgba(234,196,106,.12);color:var(--gold)}
-  .main{padding:2rem}
-  .kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin-bottom:2rem}
-  .kpi .card{padding:1.5rem}
-  .kpi .num{font-family:'Bebas Neue',sans-serif;font-size:2.4rem}
-  .table{width:100%;border-collapse:collapse}
-  .table th,.table td{padding:.8rem 1rem;border-bottom:1px solid rgba(234,196,106,.12);text-align:left;font-size:.9rem}
-  .table th{color:var(--gold);font-size:.75rem;letter-spacing:.15em;text-transform:uppercase}
-  .status{padding:.25rem .6rem;border-radius:999px;font-size:.72rem;font-weight:700}
-  .status.ok{background:rgba(42,157,143,.2);color:var(--jade)}
-  .status.pending{background:rgba(234,196,106,.2);color:var(--gold)}
-  .status.done{background:rgba(230,57,70,.2);color:var(--chili)}
-  @media(max-width:768px){.admin{grid-template-columns:1fr}.sidebar{display:none}}
-</style>
-</head>
-<body>
-<div class="admin">
-  <aside class="sidebar">
-    <div class="logo" style="display:flex;align-items:center;gap:.5rem"><img src="assets/logo-option3.jpg" alt="logo" style="height:34px;width:auto;border-radius:4px"/><span><span style="color:var(--chili)">CHINO'S</span> <span style="color:var(--gold)">ADMIN</span></span></div>
-    <a class="active" href="#">📊 Dashboard</a>
-    <a href="#">🍽️ Pedidos</a>
-    <a href="#">🌮 Menú</a>
-    <a href="#">🥃 Cantina</a>
-    <a href="#">👥 Clientes</a>
-    <a href="#">📦 Inventario</a>
-    <a href="#">💰 Ventas</a>
-    <a href="index.html">← Sitio público</a>
-  </aside>
-  <main class="main">
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:2rem">
-      <div>
-        <div class="kicker" style="color:var(--gold)">Demo Admin · Guzman</div>
-        <h1 class="title" style="font-size:2.4rem">Dashboard <span class="gold">en vivo</span></h1>
-      </div>
-      <div class="badge">Demo · Datos simulados</div>
-    </div>
-
-    <div class="kpi">
-      <div class="card"><div style="color:var(--muted);font-size:.75rem;letter-spacing:.15em;text-transform:uppercase">Ventas hoy</div><div class="num" style="color:var(--gold)">$18,420</div><div style="color:var(--jade);font-size:.8rem;margin-top:.3rem">▲ 12% vs ayer</div></div>
-      <div class="card"><div style="color:var(--muted);font-size:.75rem;letter-spacing:.15em;text-transform:uppercase">Pedidos</div><div class="num" style="color:var(--chili)">147</div><div style="color:var(--muted);font-size:.8rem;margin-top:.3rem">Ticket prom $125</div></div>
-      <div class="card"><div style="color:var(--muted);font-size:.75rem;letter-spacing:.15em;text-transform:uppercase">Reservas</div><div class="num" style="color:var(--cream)">38</div><div style="color:var(--muted);font-size:.8rem;margin-top:.3rem">8 pendientes</div></div>
-      <div class="card"><div style="color:var(--muted);font-size:.75rem;letter-spacing:.15em;text-transform:uppercase">Food Cost</div><div class="num" style="color:var(--jade)">26.4%</div><div style="color:var(--jade);font-size:.8rem;margin-top:.3rem">Meta ≤28%</div></div>
-    </div>
-
-    <div class="card" style="padding:1.5rem;margin-bottom:2rem">
-      <h3 style="font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:var(--gold);margin-bottom:1rem">Últimos pedidos</h3>
-      <table class="table">
-        <thead><tr><th>#</th><th>Mesa</th><th>Platillos</th><th>Total</th><th>Estado</th></tr></thead>
-        <tbody>
-          <tr><td>1042</td><td>Mesa 7</td><td>Birria Smash x3, Esquites</td><td>$520</td><td><span class="status ok">Servido</span></td></tr>
-          <tr><td>1041</td><td>Mesa 3</td><td>Pescado a la Talla, Margaritas x2</td><td>$640</td><td><span class="status pending">En cocina</span></td></tr>
-          <tr><td>1040</td><td>Barra</td><td>Mezcal Tobalá, Churros</td><td>$230</td><td><span class="status done">Pagado</span></td></tr>
-          <tr><td>1039</td><td>Mesa 12</td><td>Mole Negro, Tres Leches, Horchata</td><td>$470</td><td><span class="status ok">Servido</span></td></tr>
-          <tr><td>1038</td><td>To-go</td><td>Carnitas Confit Torta x2</td><td>$280</td><td><span class="status pending">Empacando</span></td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem">
-      <div class="card" style="padding:1.5rem">
-        <h3 style="font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:var(--gold);margin-bottom:1rem">Top platillos</h3>
-        <div style="display:flex;flex-direction:column;gap:.8rem">
-          <div style="display:flex;justify-content:space-between"><span>Birria Smash Quesataco</span><span style="color:var(--gold)">42</span></div>
-          <div style="display:flex;justify-content:space-between"><span>Cochinita Pibil Tlayuda</span><span style="color:var(--gold)">31</span></div>
-          <div style="display:flex;justify-content:space-between"><span>Pescado a la Talla</span><span style="color:var(--gold)">18</span></div>
-          <div style="display:flex;justify-content:space-between"><span>Mole Madre Short Rib</span><span style="color:var(--gold)">12</span></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>CHINO'S TASCA CHINGARO — Demo Admin | Guzman</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      .admin {
+        display: grid;
+        grid-template-columns: 240px 1fr;
+        min-height: 100vh;
+      }
+      .sidebar {
+        background: var(--charcoal);
+        border-right: 1px solid rgba(234, 196, 106, 0.15);
+        padding: 1.5rem;
+      }
+      .sidebar .logo {
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+      }
+      .sidebar a {
+        display: block;
+        padding: 0.7rem 1rem;
+        border-radius: 0.6rem;
+        color: #d6d3d1;
+        margin-bottom: 0.3rem;
+        font-size: 0.9rem;
+      }
+      .sidebar a.active,
+      .sidebar a:hover {
+        background: rgba(234, 196, 106, 0.12);
+        color: var(--gold);
+      }
+      .main {
+        padding: 2rem;
+      }
+      .kpi {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 1rem;
+        margin-bottom: 2rem;
+      }
+      .kpi .card {
+        padding: 1.5rem;
+      }
+      .kpi .num {
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 2.4rem;
+      }
+      .table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      .table th,
+      .table td {
+        padding: 0.8rem 1rem;
+        border-bottom: 1px solid rgba(234, 196, 106, 0.12);
+        text-align: left;
+        font-size: 0.9rem;
+      }
+      .table th {
+        color: var(--gold);
+        font-size: 0.75rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+      }
+      .status {
+        padding: 0.25rem 0.6rem;
+        border-radius: 999px;
+        font-size: 0.72rem;
+        font-weight: 700;
+      }
+      .status.ok {
+        background: rgba(42, 157, 143, 0.2);
+        color: var(--jade);
+      }
+      .status.pending {
+        background: rgba(234, 196, 106, 0.2);
+        color: var(--gold);
+      }
+      .status.done {
+        background: rgba(230, 57, 70, 0.2);
+        color: var(--chili);
+      }
+      @media (max-width: 768px) {
+        .admin {
+          grid-template-columns: 1fr;
+        }
+        .sidebar {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="admin">
+      <aside class="sidebar">
+        <div class="logo" style="display: flex; align-items: center; gap: 0.5rem">
+          <img src="assets/logo-option3.jpg" alt="logo" style="height: 34px; width: auto; border-radius: 4px" /><span
+            ><span style="color: var(--chili)">CHINO'S</span> <span style="color: var(--gold)">ADMIN</span></span
+          >
         </div>
-      </div>
-      <div class="card" style="padding:1.5rem">
-        <h3 style="font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:var(--gold);margin-bottom:1rem">Inventario bajo</h3>
-        <div style="display:flex;flex-direction:column;gap:.8rem">
-          <div style="display:flex;justify-content:space-between"><span>Mezcal Tobalá</span><span style="color:var(--chili)">3 botellas</span></div>
-          <div style="display:flex;justify-content:space-between"><span>Chile guajillo</span><span style="color:var(--chili)">1.2 kg</span></div>
-          <div style="display:flex;justify-content:space-between"><span>Masa harina azul</span><span style="color:var(--chili)">4 kg</span></div>
-          <div style="display:flex;justify-content:space-between"><span>Lima (caja)</span><span style="color:var(--gold)">6 cajas</span></div>
+        <a class="active" href="#">📊 Dashboard</a>
+        <a href="#">🍽️ Pedidos</a>
+        <a href="#">🌮 Menú</a>
+        <a href="#">🥃 Cantina</a>
+        <a href="#">👥 Clientes</a>
+        <a href="#">📦 Inventario</a>
+        <a href="#">💰 Ventas</a>
+        <a href="index.html">← Sitio público</a>
+      </aside>
+      <main class="main">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem">
+          <div>
+            <div class="kicker" style="color: var(--gold)">Demo Admin · Guzman</div>
+            <h1 class="title" style="font-size: 2.4rem">Dashboard <span class="gold">en vivo</span></h1>
+          </div>
+          <div class="badge">Demo · Datos simulados</div>
         </div>
-      </div>
+
+        <div class="kpi">
+          <div class="card">
+            <div style="color: var(--muted); font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase">
+              Ventas hoy
+            </div>
+            <div class="num" style="color: var(--gold)">$18,420</div>
+            <div style="color: var(--jade); font-size: 0.8rem; margin-top: 0.3rem">▲ 12% vs ayer</div>
+          </div>
+          <div class="card">
+            <div style="color: var(--muted); font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase">
+              Pedidos
+            </div>
+            <div class="num" style="color: var(--chili)">147</div>
+            <div style="color: var(--muted); font-size: 0.8rem; margin-top: 0.3rem">Ticket prom $125</div>
+          </div>
+          <div class="card">
+            <div style="color: var(--muted); font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase">
+              Reservas
+            </div>
+            <div class="num" style="color: var(--cream)">38</div>
+            <div style="color: var(--muted); font-size: 0.8rem; margin-top: 0.3rem">8 pendientes</div>
+          </div>
+          <div class="card">
+            <div style="color: var(--muted); font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase">
+              Food Cost
+            </div>
+            <div class="num" style="color: var(--jade)">26.4%</div>
+            <div style="color: var(--jade); font-size: 0.8rem; margin-top: 0.3rem">Meta ≤28%</div>
+          </div>
+        </div>
+
+        <div class="card" style="padding: 1.5rem; margin-bottom: 2rem">
+          <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; color: var(--gold); margin-bottom: 1rem">
+            Últimos pedidos
+          </h3>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Mesa</th>
+                <th>Platillos</th>
+                <th>Total</th>
+                <th>Estado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1042</td>
+                <td>Mesa 7</td>
+                <td>Birria Smash x3, Esquites</td>
+                <td>$520</td>
+                <td><span class="status ok">Servido</span></td>
+              </tr>
+              <tr>
+                <td>1041</td>
+                <td>Mesa 3</td>
+                <td>Pescado a la Talla, Margaritas x2</td>
+                <td>$640</td>
+                <td><span class="status pending">En cocina</span></td>
+              </tr>
+              <tr>
+                <td>1040</td>
+                <td>Barra</td>
+                <td>Mezcal Tobalá, Churros</td>
+                <td>$230</td>
+                <td><span class="status done">Pagado</span></td>
+              </tr>
+              <tr>
+                <td>1039</td>
+                <td>Mesa 12</td>
+                <td>Mole Negro, Tres Leches, Horchata</td>
+                <td>$470</td>
+                <td><span class="status ok">Servido</span></td>
+              </tr>
+              <tr>
+                <td>1038</td>
+                <td>To-go</td>
+                <td>Carnitas Confit Torta x2</td>
+                <td>$280</td>
+                <td><span class="status pending">Empacando</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem">
+          <div class="card" style="padding: 1.5rem">
+            <h3
+              style="font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; color: var(--gold); margin-bottom: 1rem"
+            >
+              Top platillos
+            </h3>
+            <div style="display: flex; flex-direction: column; gap: 0.8rem">
+              <div style="display: flex; justify-content: space-between">
+                <span>Birria Smash Quesataco</span><span style="color: var(--gold)">42</span>
+              </div>
+              <div style="display: flex; justify-content: space-between">
+                <span>Cochinita Pibil Tlayuda</span><span style="color: var(--gold)">31</span>
+              </div>
+              <div style="display: flex; justify-content: space-between">
+                <span>Pescado a la Talla</span><span style="color: var(--gold)">18</span>
+              </div>
+              <div style="display: flex; justify-content: space-between">
+                <span>Mole Madre Short Rib</span><span style="color: var(--gold)">12</span>
+              </div>
+            </div>
+          </div>
+          <div class="card" style="padding: 1.5rem">
+            <h3
+              style="font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; color: var(--gold); margin-bottom: 1rem"
+            >
+              Inventario bajo
+            </h3>
+            <div style="display: flex; flex-direction: column; gap: 0.8rem">
+              <div style="display: flex; justify-content: space-between">
+                <span>Mezcal Tobalá</span><span style="color: var(--chili)">3 botellas</span>
+              </div>
+              <div style="display: flex; justify-content: space-between">
+                <span>Chile guajillo</span><span style="color: var(--chili)">1.2 kg</span>
+              </div>
+              <div style="display: flex; justify-content: space-between">
+                <span>Masa harina azul</span><span style="color: var(--chili)">4 kg</span>
+              </div>
+              <div style="display: flex; justify-content: space-between">
+                <span>Lima (caja)</span><span style="color: var(--gold)">6 cajas</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
     </div>
-  </main>
-</div>
-<script src="js/main.js"></script>
-</body>
+    <script src="js/main.js"></script>
+  </body>
 </html>

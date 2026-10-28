@@ -1,63 +1,92 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>CHINO'S TASCA CHINGARO — Reservas | Guzman</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="css/style.css"/>
-</head>
-<body>
-<div class="cursor-glow"></div>
-<nav>
-  <div class="wrap">
-    <a href="index.html" class="logo" style="display:flex;align-items:center;gap:.6rem"><img src="assets/logo-option3.jpg" alt="logo" style="height:40px;width:auto;border-radius:6px"/><span style="font-family:'Bebas Neue',sans-serif;font-size:1.5rem"><span class="c">CHINO'S</span> <span class="t">TASCA</span> <span class="g">CHINGARO</span></span></a>
-    <div class="navlinks"><a href="index.html">Inicio</a><a href="menu.html">Menú</a><a href="contacto.html">Contacto</a></div>
-    <a href="reservas.html" class="btn btn-gold" style="padding:.55rem 1.2rem;font-size:.8rem">Reservar</a>
-  </div>
-</nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>CHINO'S TASCA CHINGARO — Reservas | Guzman</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="cursor-glow"></div>
+    <nav>
+      <div class="wrap">
+        <a href="index.html" class="logo" style="display: flex; align-items: center; gap: 0.6rem"
+          ><img src="assets/logo-option3.jpg" alt="logo" style="height: 40px; width: auto; border-radius: 6px" /><span
+            style="font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem"
+            ><span class="c">CHINO'S</span> <span class="t">TASCA</span> <span class="g">CHINGARO</span></span
+          ></a
+        >
+        <div class="navlinks">
+          <a href="index.html">Inicio</a><a href="menu.html">Menú</a><a href="contacto.html">Contacto</a>
+        </div>
+        <a href="reservas.html" class="btn btn-gold" style="padding: 0.55rem 1.2rem; font-size: 0.8rem">Reservar</a>
+      </div>
+    </nav>
 
-<section style="padding-top:8rem">
-  <div class="container" style="max-width:820px">
-    <div style="text-align:center;margin-bottom:2.5rem" class="reveal">
-      <div class="kicker">Reservas</div>
-      <h1 class="title">Aparta tu <span class="gold">mesa</span></h1>
-      <p class="sub">Confirmación inmediata por WhatsApp.</p>
-    </div>
-    <form id="reservaForm" class="card reveal" style="padding:2.5rem">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem">
-        <div><label>Nombre</label><input required placeholder="Tu nombre"/></div>
-        <div><label>Teléfono</label><input required placeholder="+52 ..."/></div>
+    <section style="padding-top: 8rem">
+      <div class="container" style="max-width: 820px">
+        <div style="text-align: center; margin-bottom: 2.5rem" class="reveal">
+          <div class="kicker">Reservas</div>
+          <h1 class="title">Aparta tu <span class="gold">mesa</span></h1>
+          <p class="sub">Confirmación inmediata por WhatsApp.</p>
+        </div>
+        <form id="reservaForm" class="card reveal" style="padding: 2.5rem">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem">
+            <div><label>Nombre</label><input required placeholder="Tu nombre" /></div>
+            <div><label>Teléfono</label><input required placeholder="+52 ..." /></div>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.2rem; margin-top: 1.2rem">
+            <div><label>Fecha</label><input type="date" required /></div>
+            <div><label>Hora</label><input type="time" required /></div>
+            <div>
+              <label>Personas</label
+              ><select>
+                <option>2</option>
+                <option>4</option>
+                <option>6</option>
+                <option>8+</option>
+              </select>
+            </div>
+          </div>
+          <div style="margin-top: 1.2rem">
+            <label>Notas</label><textarea rows="3" placeholder="Alergias, celebración..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1.5rem; font-size: 1.05rem">
+            Confirmar Reserva
+          </button>
+          <p
+            id="reservaMsg"
+            style="text-align: center; color: var(--jade); margin-top: 1rem; display: none; font-size: 1.1rem"
+          >
+            ¡Reserva recibida! Te contactaremos pronto. 🌮
+          </p>
+        </form>
+        <div id="confirmCard" style="display: none; margin-top: 2rem" class="card reveal">
+          <div style="padding: 2rem; text-align: center">
+            <div style="font-size: 3rem">✅</div>
+            <h2 style="font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--gold); margin: 1rem 0">
+              Reserva confirmada
+            </h2>
+            <p style="color: #d6d3d1">Tu mesa queda apartada. Te enviamos confirmación por WhatsApp.</p>
+            <a href="index.html" class="btn btn-gold" style="margin-top: 1.5rem">Volver al inicio</a>
+          </div>
+        </div>
       </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.2rem;margin-top:1.2rem">
-        <div><label>Fecha</label><input type="date" required/></div>
-        <div><label>Hora</label><input type="time" required/></div>
-        <div><label>Personas</label><select><option>2</option><option>4</option><option>6</option><option>8+</option></select></div>
-      </div>
-      <div style="margin-top:1.2rem"><label>Notas</label><textarea rows="3" placeholder="Alergias, celebración..."></textarea></div>
-      <button type="submit" class="btn btn-primary" style="width:100%;margin-top:1.5rem;font-size:1.05rem">Confirmar Reserva</button>
-      <p id="reservaMsg" style="text-align:center;color:var(--jade);margin-top:1rem;display:none;font-size:1.1rem">¡Reserva recibida! Te contactaremos pronto. 🌮</p>
-    </form>
-    <div id="confirmCard" style="display:none;margin-top:2rem" class="card reveal">
-      <div style="padding:2rem;text-align:center">
-        <div style="font-size:3rem">✅</div>
-        <h2 style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--gold);margin:1rem 0">Reserva confirmada</h2>
-        <p style="color:#d6d3d1">Tu mesa queda apartada. Te enviamos confirmación por WhatsApp.</p>
-        <a href="index.html" class="btn btn-gold" style="margin-top:1.5rem">Volver al inicio</a>
-      </div>
-    </div>
-  </div>
-</section>
-<script>
-  document.getElementById('reservaForm').addEventListener('submit', e=>{
-    e.preventDefault();
-    document.getElementById('reservaMsg').style.display='block';
-    document.getElementById('confirmCard').style.display='block';
-    e.target.reset();
-  });
-</script>
-<script src="js/main.js"></script>
-</body>
+    </section>
+    <script>
+      document.getElementById('reservaForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        document.getElementById('reservaMsg').style.display = 'block';
+        document.getElementById('confirmCard').style.display = 'block';
+        e.target.reset();
+      });
+    </script>
+    <script src="js/main.js"></script>
+  </body>
 </html>

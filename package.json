@@ -16,7 +16,13 @@
     "test:watch": "jest --watch",
     "prepare": "husky install"
   },
-  "keywords": ["restaurant", "cantina", "mexican", "demo", "guzman"],
+  "keywords": [
+    "restaurant",
+    "cantina",
+    "mexican",
+    "demo",
+    "guzman"
+  ],
   "author": "Familia Guzman",
   "license": "MIT",
   "dependencies": {

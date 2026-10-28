@@ -8,19 +8,47 @@ describe('formatMXN', () => {
 
 describe('validateReservation', () => {
   test('valid payload returns no errors', () => {
-    expect(validateReservation({ nombre: 'Juan', telefono: '+525512345678', fecha: '2025-01-01', hora: '19:00', personas: 4 })).toEqual([]);
+    expect(
+      validateReservation({
+        nombre: 'Juan',
+        telefono: '+525512345678',
+        fecha: '2025-01-01',
+        hora: '19:00',
+        personas: 4,
+      })
+    ).toEqual([]);
   });
   test('missing nombre errors', () => {
-    expect(validateReservation({ telefono: '+525512345678', fecha: '2025-01-01', hora: '19:00', personas: 2 })).toContain('nombre requerido');
+    expect(
+      validateReservation({ telefono: '+525512345678', fecha: '2025-01-01', hora: '19:00', personas: 2 })
+    ).toContain('nombre requerido');
   });
   test('invalid phone errors', () => {
-    expect(validateReservation({ nombre: 'Juan', telefono: 'abc', fecha: '2025-01-01', hora: '19:00', personas: 2 })).toContain('teléfono inválido');
+    expect(
+      validateReservation({ nombre: 'Juan', telefono: 'abc', fecha: '2025-01-01', hora: '19:00', personas: 2 })
+    ).toContain('teléfono inválido');
   });
   test('invalid date errors', () => {
-    expect(validateReservation({ nombre: 'Juan', telefono: '+525512345678', fecha: '01-01-2025', hora: '19:00', personas: 2 })).toContain('fecha inválida');
+    expect(
+      validateReservation({
+        nombre: 'Juan',
+        telefono: '+525512345678',
+        fecha: '01-01-2025',
+        hora: '19:00',
+        personas: 2,
+      })
+    ).toContain('fecha inválida');
   });
   test('invalid personas errors', () => {
-    expect(validateReservation({ nombre: 'Juan', telefono: '+525512345678', fecha: '2025-01-01', hora: '19:00', personas: 0 })).toContain('personas inválidas');
+    expect(
+      validateReservation({
+        nombre: 'Juan',
+        telefono: '+525512345678',
+        fecha: '2025-01-01',
+        hora: '19:00',
+        personas: 0,
+      })
+    ).toContain('personas inválidas');
   });
   test('null payload errors', () => {
     expect(validateReservation(null).length).toBeGreaterThan(0);

@@ -13,7 +13,11 @@ describe('API health', () => {
 describe('Reservations API', () => {
   test('POST /api/reservas valid', async () => {
     const res = await request(app).post('/api/reservas').send({
-      nombre: 'Juan', telefono: '+525512345678', fecha: '2025-01-01', hora: '19:00', personas: 2
+      nombre: 'Juan',
+      telefono: '+525512345678',
+      fecha: '2025-01-01',
+      hora: '19:00',
+      personas: 2,
     });
     expect(res.statusCode).toBe(201);
     expect(res.body.ok).toBe(true);
